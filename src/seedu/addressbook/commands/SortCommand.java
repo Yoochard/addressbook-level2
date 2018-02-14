@@ -15,6 +15,7 @@ public class SortCommand extends Command{
             + ": Sorts all persons in the address book as a list with index numbers.\n"
             + "Example: " + COMMAND_WORD;
 
+    
     @Override
     public CommandResult execute() {
         addressBook.sort();
