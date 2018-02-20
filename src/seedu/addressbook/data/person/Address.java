@@ -15,7 +15,7 @@ public class Address {
     private String street;
     private String unit;
     private String postal_code;
-    public String value;
+    private String value;
     private boolean isPrivate;
 
     /**
