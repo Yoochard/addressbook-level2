@@ -50,6 +50,7 @@ public class Address {
     public String getPostalCode(){
         return postal_code;
     }
+    public String getValue() {return value;}
 
 
     /**
