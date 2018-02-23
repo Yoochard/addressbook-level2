@@ -53,6 +53,14 @@ Examples:
 Shows a list of all persons in the address book.<br>
 Format: `list`
 
+### Sort the address book  : `sort`
+Sort the address book by name in alphabetic order, case-sensitive<br>
+Format: `sort`
+
+### Reminder which will display in User Interface : `reminder`
+Display your reminder at the top of your addressbook, cool feature isn't it! You can always change it by typing reminder + your message.
+Format: `reminder YOUR_REMINDER_STRING`
+
 ### Finding all persons containing any keyword in their name: `find`
 Finds persons whose names contain any of the given keywords.<br>
 Format: `find KEYWORD [MORE_KEYWORDS]`
