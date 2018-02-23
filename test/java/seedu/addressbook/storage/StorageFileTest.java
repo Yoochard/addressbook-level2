@@ -20,6 +20,7 @@ import seedu.addressbook.data.person.Phone;
 import seedu.addressbook.data.tag.Tag;
 import seedu.addressbook.data.tag.UniqueTagList;
 import seedu.addressbook.storage.StorageFile.StorageOperationException;
+import seedu.addressbook.data.reminder.Reminder;
 import static seedu.addressbook.util.TestUtil.assertTextFilesEqual;
 import static seedu.addressbook.util.TestUtil.assertFileDoesNotExist;
 

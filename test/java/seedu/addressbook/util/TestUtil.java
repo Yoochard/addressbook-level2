@@ -27,6 +27,7 @@ import seedu.addressbook.data.person.UniquePersonList;
 import seedu.addressbook.data.person.UniquePersonList.DuplicatePersonException;
 import seedu.addressbook.data.tag.Tag;
 import seedu.addressbook.data.tag.UniqueTagList;
+import seedu.addressbook.data.reminder.Reminder;
 
 public class TestUtil {
     /**
@@ -58,13 +59,17 @@ public class TestUtil {
 
         return list;
     }
+    /**
+     * Creates a default reminder message.
+     */
+    public static String reminderMessage = "This is a reminder!";
 
     /**
      * Creates a copy of the original address book with the same entries
      * of Persons and Tags. The Persons and Tags are not cloned.
      */
     public static AddressBook clone(AddressBook addressBook) {
-        return new AddressBook(addressBook.getAllPersons(), addressBook.getAllTags());
+        return new AddressBook(addressBook.getAllPersons(), addressBook.getAllTags(), reminderMessage);
     }
 
     /**

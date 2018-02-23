@@ -86,6 +86,9 @@ public class Parser {
             case ViewAllCommand.COMMAND_WORD:
                 return prepareViewAll(arguments);
 
+            case ReminderCommand.COMMAND_WORD:
+                return prepareReminder(arguments);
+
             case SortCommand.COMMAND_WORD:
                 return new SortCommand();
 
@@ -187,6 +190,9 @@ public class Parser {
         } catch (NumberFormatException nfe) {
             return new IncorrectCommand(MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
+    }
+    private Command prepareReminder(String reminder) {
+        return new ReminderCommand(reminder);
     }
     /**
      * Parses arguments in the context of the view all command.
