@@ -24,6 +24,7 @@ public class AddressBook {
 
     private final UniquePersonList allPersons;
     private final UniqueTagList allTags; // can contain tags not attached to any person
+    private String reminderMessage;
 
     /**
      * Creates an empty address book.
@@ -40,9 +41,10 @@ public class AddressBook {
      * @param persons external changes to this will not affect this address book
      * @param tags external changes to this will not affect this address book
      */
-    public AddressBook(UniquePersonList persons, UniqueTagList tags) {
+    public AddressBook(UniquePersonList persons, UniqueTagList tags, String reminderMessage) {
         this.allPersons = new UniquePersonList(persons);
         this.allTags = new UniqueTagList(tags);
+        this.reminderMessage = reminderMessage;
         for (Person p : allPersons) {
             syncTagsWithMasterList(p);
         }
@@ -83,6 +85,7 @@ public class AddressBook {
         syncTagsWithMasterList(toAdd);
     }
 
+
     /**
      * Returns true if an equivalent person exists in the address book.
      */
@@ -98,7 +101,13 @@ public class AddressBook {
     public void removePerson(ReadOnlyPerson toRemove) throws PersonNotFoundException {
         allPersons.remove(toRemove);
     }
+    /**
+     * Sorts existing persons
+     */
 
+    public void sort(){
+        allPersons.sort();
+    }
     /**
      * Clears all persons and tags from the address book.
      */
@@ -114,6 +123,12 @@ public class AddressBook {
         return new UniquePersonList(allPersons);
     }
 
+    public void setReminderMessage(String reminderMessage) {
+        this.reminderMessage = reminderMessage;
+    }
+    public String getReminderMessage() {
+        return reminderMessage;
+    }
     /**
      * Returns a new UniqueTagList of all tags in the address book at the time of the call.
      */
@@ -125,7 +140,7 @@ public class AddressBook {
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof AddressBook // instanceof handles nulls
-                        && this.allPersons.equals(((AddressBook) other).allPersons)
-                        && this.allTags.equals(((AddressBook) other).allTags));
+                && this.allPersons.equals(((AddressBook) other).allPersons)
+                && this.allTags.equals(((AddressBook) other).allTags));
     }
 }
